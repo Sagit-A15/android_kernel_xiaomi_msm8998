@@ -1538,7 +1538,7 @@ static int ncm_bind(struct usb_configuration *c, struct usb_function *f)
 	}
 
 	status = usb_assign_descriptors(f, ncm_fs_function, ncm_hs_function,
-			ncm_ss_function);
+			NULL, NULL);
 	if (status)
 		goto fail;
 
