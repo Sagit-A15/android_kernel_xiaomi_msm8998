@@ -1522,9 +1522,13 @@ int usb_func_ep_queue(struct usb_function *func, struct usb_ep *ep,
 
 /* utility to simplify map/unmap of usb_requests to/from DMA */
 
+extern int usb_gadget_map_request_by_dev(struct device *dev,
+		struct usb_request *req, int is_in);
 extern int usb_gadget_map_request(struct usb_gadget *gadget,
 		struct usb_request *req, int is_in);
 
+extern void usb_gadget_unmap_request_by_dev(struct device *dev,
+		struct usb_request *req, int is_in);
 extern void usb_gadget_unmap_request(struct usb_gadget *gadget,
 		struct usb_request *req, int is_in);
 
